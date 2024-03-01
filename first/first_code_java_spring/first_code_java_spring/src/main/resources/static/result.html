@@ -1,0 +1,26 @@
+<!-- result.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum Result</title>
+</head>
+<body>
+<h1>Sum Result</h1>
+<p id="sumDisplay"></p>
+
+<script>
+    // Retrieve the sum from the URL parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const sum = parseFloat(urlParams.get('sum'));
+
+    // Display the sum on the page
+    document.getElementById("sumDisplay").textContent = `Sum: ${sum}`;
+    if (performance.navigation.type === 1) {
+            // Page was refreshed, go back to the previous page
+            window.history.back();
+        }
+</script>
+</body>
+</html>
